@@ -8,4 +8,6 @@ Figure 1 is the same as Figure 2 from [Quinn et al. (2017)](http://onlinelibrary
 
 Figure 2 was made mannually in Adobe Illustrator.
 
+The data for several figures is too large to share over Github, but can be downloaded [here](https://drive.google.com/open?id=1H-n9oljcyC1F1Uq5BseSsIwQWVY5XwGj). Pasting the files within `RedRiver_TimeVaryingSA/guidelines_100` and `RedRiver_TimeVaryingSA/HydroInfo_100` of that Google Drive folder to the corresponding folders of this repository will enable all figures to be plotted.
+
 Licensed under the GNU Lesser General Public License.
