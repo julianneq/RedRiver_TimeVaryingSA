@@ -16,7 +16,7 @@ pTB = plt.Rectangle((0,0), 1, 1, fc=colors[3], edgecolor='none')
 pHNfcst = plt.Rectangle((0,0), 1, 1, fc=colors[4], edgecolor='none')
 pInteract = plt.Rectangle((0,0), 1, 1, fc=colors[5], edgecolor='none')
 
-def makeFigures6_S4_S5():
+def makeFigures6_S5_S6():
     # get data for HydroInfo_100 formulation, including:
     # FloodYr = year of 100-yr flood
     # DeficitYr = year of 100-yr squared deficit
@@ -44,7 +44,7 @@ def makeFigures6_S4_S5():
     ylabels = ['EMODPS Best\nFlood Policy','EMODPS Best\nHydro Policy','EMODPS Best\nDeficit Policy',\
                'EMODPS\nCompromise\nPolicy']
     outputs = [r'$u_t^{SL}$',r'$u_t^{HB}$',r'$u_t^{TQ}$',r'$u_t^{TB}$']
-    makePlot(solns, reservoir, outputs, ylabels, 12.5, 'FigureS4.pdf')
+    makePlot(solns, reservoir, outputs, ylabels, 12.5, 'FigureS5.pdf')
     
     # using numerical estimates of true releases (Figure S5)
     BestFloodSoln = getSolns_r(HydroInfo_100, HydroInfo_100.bestFlood, '0.005')
@@ -55,7 +55,7 @@ def makeFigures6_S4_S5():
     ylabels = ['EMODPS Best\nFlood Policy','EMODPS Best\nHydro Policy','EMODPS Best\nDeficit Policy',\
                'EMODPS\nCompromise\nPolicy']
     outputs = [r'$r_{t+1}^{SL}$',r'$r_{t+1}^{HB}$',r'$r_{t+1}^{TQ}$',r'$r_{t+1}^{TB}$']
-    makePlot(solns, reservoir, outputs, ylabels, 12.5, 'FigureS5.pdf')
+    makePlot(solns, reservoir, outputs, ylabels, 12.5, 'FigureS6.pdf')
     
     return None
 
@@ -127,4 +127,4 @@ def makePlot(solns, reservoir, outputs, ylabels, height, figureName):
     
     return None
 
-makeFigures6_S4_S5()
+makeFigures6_S5_S6()
