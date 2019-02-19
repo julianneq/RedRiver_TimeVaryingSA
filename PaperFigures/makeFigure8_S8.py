@@ -15,7 +15,7 @@ pTB = plt.Rectangle((0,0), 1, 1, fc=colors[3], edgecolor='none')
 pHNfcst = plt.Rectangle((0,0), 1, 1, fc=colors[4], edgecolor='none')
 pInteract = plt.Rectangle((0,0), 1, 1, fc=colors[5], edgecolor='none')
 
-def makeFigures8_S8():
+def makeFigures8_S9():
     # get data for HydroInfo_100 formulation, including:
     # FloodYr = year of 100-yr flood
     # DeficitYr = year of 100-yr squared deficit
@@ -43,15 +43,15 @@ def makeFigures8_S8():
     #makePlot(solns, titles, ylabels, 'Figure8.pdf', 13)
     makePlot(solns, titles, ylabels, 'Figure8.pdf', 10)
     
-    # with a perturbation of 0.05 (Figure S8)
+    # with a perturbation of 0.05 (Figure S9)
     CompAnalytical = getSolns(HydroInfo_100, HydroInfo_100.compromise, '0')
     #CompNumericalU = getSolns_u(HydroInfo_100, HydroInfo_100.compromise, '0.05')
     CompNumericalR = getSolns_r(HydroInfo_100, HydroInfo_100.compromise, '0.05')
     GL = getSolns_r(guidelines_100, guidelines_100.bestHydro, '0.05')
     #solns = [CompAnalytical, CompNumericalU, CompNumericalR, GL]
     solns = [CompAnalytical, CompNumericalR, GL]
-    #makePlot(solns, titles, ylabels, 'FigureS8.pdf', 13)
-    makePlot(solns, titles, ylabels, 'FigureS8.pdf', 10)
+    #makePlot(solns, titles, ylabels, 'FigureS9.pdf', 13)
+    makePlot(solns, titles, ylabels, 'FigureS9.pdf', 10)
 
     return None
                
@@ -170,4 +170,4 @@ def makePlot(solns, titles, ylabels, figname, width):
 
     return None
 
-makeFigures8_S8()
+makeFigures8_S9()
