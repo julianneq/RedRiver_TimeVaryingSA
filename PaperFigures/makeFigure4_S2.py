@@ -108,8 +108,8 @@ def makeFigures4_S2():
         ax.set_xlim([-0.1,3.3])
         ax.set_ylabel(r'$J_{Hydro}$ (Gwh/day)', fontsize=16)
         ax.tick_params(axis='both',labelsize=14)
-        dikeLine, = ax.plot([2.15,2.15],[32,47],c='#4daf4a',linewidth=2)
-        ax.set_ylim([32,47])
+        dikeLine, = ax.plot([2.15,2.15],[34,47],c='#4daf4a',linewidth=2)
+        ax.set_ylim([34,47])
         legend1 = ax.legend([l1, l2], [str(round(np.min([np.min(optimized.reference[:,1]),np.min(guidelines.reference[:,1])]),1)), \
             str(round(np.max([np.max(optimized.reference[:,1]),np.min(guidelines.reference[:,1])]),1))], \
             scatterpoints=1, title=r'$J_{Deficit^2}$ ' + r'$(m^3/s)^2$', fontsize=14, loc='upper right', frameon=False)
