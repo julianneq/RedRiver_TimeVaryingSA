@@ -38,12 +38,12 @@ pTQ = plt.Rectangle((0,0), 1, 1, fc=colors[2], edgecolor='none')
 pTB = plt.Rectangle((0,0), 1, 1, fc=colors[3], edgecolor='none')
 pHNfcst = plt.Rectangle((0,0), 1, 1, fc=colors[4], edgecolor='none')
         
-def makeFigureS3_S6():
+def makeFigureS4_S7():
     guidelines_100 = getFormulations('guidelines_100')
     HydroInfo_100 = getFormulations('HydroInfo_100')
     
     diffs = [False, True]
-    figNames = ['FigureS3.pdf','FigureS6.pdf']
+    figNames = ['FigureS4.pdf','FigureS7.pdf']
     for i, diff in enumerate(diffs):
         BestFloodSoln = getSolns(HydroInfo_100.bestFlood, 'Flood', '0.005', inputNames, inputRanges, \
                                  outputNames, outputRanges, objNames, diff)
@@ -78,7 +78,7 @@ def makePlot(solns, figname):
         for j in range(len(years)):
             ax = fig.add_subplot(len(solns),len(years),i*len(years)+j+1)
             if i != len(solns)-1: # not the guidelines
-                if figname == 'FigureS3.pdf': # state trajectories
+                if figname == 'FigureS4.pdf': # state trajectories
                     for k in range(len(inputs)):
                         ax.plot(range(0,365),solns[i].allInputs[years[j],:,k],c=colors[k],linewidth=2)
                 else: # difference between true and prescribed releases
@@ -89,7 +89,7 @@ def makePlot(solns, figname):
                         ymaxs[i] = max(ymaxs[i],np.max(solns[i].allOutputs[years[j],:,k]))
                 
             else:
-                if figname == 'FigureS3.pdf':
+                if figname == 'FigureS4.pdf':
                     for k in range(len(inputs)):
                         ax.plot(range(0,10),solns[i].allInputs[years[j],0:10,k],c=colors[k],linewidth=2)
                         ax.plot(range(208,365),solns[i].allInputs[years[j],208:365,k],c=colors[k],linewidth=2)
@@ -108,7 +108,7 @@ def makePlot(solns, figname):
                 
             # Box for reservoirs between seasons (unregulated by guidelines)
             if i == len(solns)-1:
-                if figname == 'FigureS3.pdf':
+                if figname == 'FigureS4.pdf':
                     # Box for reservoirs between seasons (unregulated by guidelines)
                     ax.plot([10,10], [0,1], c='k', linewidth=2, linestyle='--')
                     ax.plot([10,44], [0,0], c='k', linewidth=2, linestyle='--')
@@ -137,14 +137,14 @@ def makePlot(solns, figname):
                 
             ax.set_xlim([0,364])
             
-            #if figname == 'FigureS6.pdf':
+            #if figname == 'FigureS7.pdf':
             #    ax.set_yscale('log')
                 
             axes.append(ax)
             
     for i in range(len(axes)):
         axes[i].set_ylim([ymins[int(np.floor(i/3.0))],ymaxs[int(np.floor(i/3.0))]])
-        if figname == 'FigureS6.pdf' and i>= 12: # create box for guidelines in Figure S6
+        if figname == 'FigureS7.pdf' and i>= 12: # create box for guidelines in Figure S6
             axes[i].plot([10,10], [ymins[int(np.floor(i/3.0))],ymaxs[int(np.floor(i/3.0))]], \
                     c='k', linewidth=2, linestyle='--')
             axes[i].plot([10,44], [ymins[int(np.floor(i/3.0))],ymins[int(np.floor(i/3.0))]], \
@@ -165,7 +165,7 @@ def makePlot(solns, figname):
                 
     fig.text(0.02, 0.5, 'Normalized Value', va='center', rotation='vertical', fontsize=18)
     fig.subplots_adjust(bottom=0.15,hspace=0.3)
-    if figname == 'FigureS3.pdf':
+    if figname == 'FigureS4.pdf':
         fig.suptitle('State Trajectories', fontsize=18)
         plt.figlegend([pSL,pHB,pTQ,pTB,pHNfcst],inputs,\
                   loc='lower center', ncol=3, fontsize=16, frameon=True)
@@ -245,4 +245,4 @@ def getSolns(solnNo, name, perturbation, inputNames, inputRanges, outputNames, o
     
     return soln
 
-makeFigureS3_S6()
+makeFigureS4_S7()
