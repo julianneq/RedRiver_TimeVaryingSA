@@ -75,6 +75,8 @@ def makeScatterPlot(ax, x1, x2, xlabel, ylabel, blueYr, redYr):
                
     ax.set_xlabel(xlabel,fontsize=16)
     ax.set_ylabel(ylabel,fontsize=16)
+    ax.set_xticks(np.arange(0,1.1,0.25))
+    ax.set_yticks(np.arange(0,1.1,0.25))
     ax.tick_params(axis='both',labelsize=14)
     
     return None
