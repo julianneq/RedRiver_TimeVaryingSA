@@ -85,7 +85,7 @@ def calcD(C, B, W, inputNumber, inputValues, outputNumber):
         for m in range(M):
             innerSum = innerSum - (inputValues[m] - C[m,n])**2 / B[m,n]**2
         
-        D = D - 2 * (inputValues[inputNumber]/(B[inputNumber, n])**2) * W[outputNumber,n] * np.exp(innerSum)
+        D = D - 2 * ((inputValues[inputNumber]-C[inputNumber,n])/(B[inputNumber, n])**2) * W[outputNumber,n] * np.exp(innerSum)
     
     return D
 
