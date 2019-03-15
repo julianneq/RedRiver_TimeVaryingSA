@@ -18,7 +18,7 @@ def calcNumericalSIs():
     IO_ranges = np.array([[2223600000, 3215000000, 402300000, 402300000, 0, \
                            0, 0, 0, 0], \
                             [12457000000, 10890000000, 2481000000, 3643000000, 20, \
-                             40002, 35784, 13551, 3650]]) # [[mins], [maxs]] note 34650 should be 45000 when redone
+                             40002, 35784, 13551, 3650]])
     
     header = ''
     for input in inputNames:
