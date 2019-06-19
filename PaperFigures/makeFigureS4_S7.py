@@ -63,7 +63,7 @@ def makeFigureS4_S7():
 def makePlot(solns, figname):
     # plot state and prescribed release trajectories across solutions (rows) and events (columns)
     fig = plt.figure()
-    if figname == 'FigureS3.pdf':
+    if figname == 'FigureS4.pdf':
         ymaxs = np.ones([5])
     else:
         ymaxs = np.zeros([5])
@@ -144,7 +144,7 @@ def makePlot(solns, figname):
             
     for i in range(len(axes)):
         axes[i].set_ylim([ymins[int(np.floor(i/3.0))],ymaxs[int(np.floor(i/3.0))]])
-        if figname == 'FigureS7.pdf' and i>= 12: # create box for guidelines in Figure S6
+        if figname == 'FigureS7.pdf' and i>= 12: # create box for guidelines in Figure S7
             axes[i].plot([10,10], [ymins[int(np.floor(i/3.0))],ymaxs[int(np.floor(i/3.0))]], \
                     c='k', linewidth=2, linestyle='--')
             axes[i].plot([10,44], [ymins[int(np.floor(i/3.0))],ymins[int(np.floor(i/3.0))]], \
