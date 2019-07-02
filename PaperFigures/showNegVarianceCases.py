@@ -120,7 +120,7 @@ def makeReleasePlot(ax, var, simulations, argCorr, corrDay, policy, highYr, lowY
     normInputs = np.zeros([102,M]) # 100 values along first input; all others constant
     # find value of sin() and cos() inputs on minCorrDay
     normInputs[:,5] = np.sin(2*math.pi*corrDay/365 - policy[-2])
-    normInputs[:,6] = np.sin(2*math.pi*corrDay/365 - policy[-1])
+    normInputs[:,6] = np.cos(2*math.pi*corrDay/365 - policy[-1])
     
     # plot prescribed Hoa Binh release vs. first input on Julian day of minimum correlation
     # of highYr and lowYr while holding all other values constant at values from that day and year
